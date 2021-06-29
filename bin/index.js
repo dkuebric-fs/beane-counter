@@ -1,44 +1,35 @@
 #!/usr/bin/env node
 
-const yargs = require("yargs");
-const chalk = require("chalk");
-const boxen = require("boxen");
-const axios = require("axios");
-require('dotenv').config()
+const yargs = require('yargs');
+const github = require('../src/api/github.js');
+const dotenv = require('dotenv');
+
+dotenv.config()
 
 const AUTHORS = JSON.parse(process.env.GITHUB_AUTHORS);
 const REPOS = JSON.parse(process.env.GITHUB_REPOS);
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_BASE_URL = process.env.GITHUB_BASE_URL;
 
-console.log(AUTHORS);
-console.log(REPOS);
-console.log(GITHUB_TOKEN);
-console.log(GITHUB_BASE_URL);
+//console.log(AUTHORS);
+//console.log(REPOS);
 
 const options = yargs
- .usage("Usage: -n <name>")
- .option("n", { alias: "name", describe: "Your name", type: "string", demandOption: true })
+ .usage("Usage: -a <author>")
+ .option("a", { alias: "author", choices: AUTHORS, describe: "GitHub Author", type: "string", demandOption: true })
  .argv;
 
-const greeting = chalk.white.bold(`Hello, ${options.name}!`);
+console.log(`Searching PRs for ${options.author}`);
 
-const boxenOptions = {
- padding: 1,
- margin: 1,
- borderStyle: "round",
- borderColor: "green",
- backgroundColor: "#555555"
+
+const searchApi = async () => {
+    try {
+        const response = await github.client.get(`search/issues?q=author:${options.author}`);
+    
+        console.log(response.data.total_count); 
+    } catch (e) {
+        console.log(e);
+    }
 };
-const msgBox = boxen( greeting, boxenOptions );
 
-console.log(msgBox);
+searchApi();
 
-console.log("Here's a random joke for you:");
-
-const url = "https://icanhazdadjoke.com/";
-
-axios.get(url, { headers: { Accept: "application/json" } })
- .then(res => {
-   console.log(res.data.joke);
- });
+//export default () => {}
