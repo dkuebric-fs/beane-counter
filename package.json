@@ -1,7 +1,7 @@
 {
   "name": "beane-counter",
   "version": "1.0.0",
-  "description": "Utility to easily find recent PRs for co-workers and team PR trends ",
+  "description": "Utility to easily find recent PRs for co-workers and team PR trends. Named after the famed GM of the Oakland A's Billy Beane (Money Ball)",
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
