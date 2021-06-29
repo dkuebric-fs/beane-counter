@@ -1,0 +1,23 @@
+{
+  "name": "beane-counter",
+  "version": "1.0.0",
+  "description": "Utility to easily find recent PRs for co-workers and team PR trends ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mattwear-fullstory/beane-counter.git"
+  },
+  "keywords": [
+    "GitHub",
+    "API"
+  ],
+  "author": "Matt Wear",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/mattwear-fullstory/beane-counter/issues"
+  },
+  "homepage": "https://github.com/mattwear-fullstory/beane-counter#readme"
+}
