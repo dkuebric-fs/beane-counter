@@ -2,7 +2,7 @@
   "name": "beane-counter",
   "version": "1.0.0",
   "description": "Utility to easily find recent PRs for co-workers and team PR trends ",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/mattwear-fullstory/beane-counter/issues"
   },
-  "homepage": "https://github.com/mattwear-fullstory/beane-counter#readme"
+  "homepage": "https://github.com/mattwear-fullstory/beane-counter#readme",
+  "bin": {
+    "hello": "./bin/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "boxen": "^5.0.1",
+    "chalk": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "yargs": "^17.0.1"
+  }
 }
