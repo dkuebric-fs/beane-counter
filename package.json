@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/mattwear-fullstory/beane-counter#readme",
   "bin": {
-    "hello": "./bin/index.js"
+    "beane-counter": "./bin/index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
