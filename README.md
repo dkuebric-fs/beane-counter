@@ -1,8 +1,7 @@
 # beane-counter
 Utility to easily find recent PRs for co-workers and team PR trends
 
-#Config 
-
+# Config 
 Create an `.env` file in the root directory and define variables like
 
 GITHUB_TOKEN=<PERSONAL GITHUB API KEY>
